@@ -14,7 +14,6 @@
     homeDirectory = if envHOME != "" then envHOME else "/home/${username}";
 
     packages = with pkgs; [
-      autojump
       bat
       btop
       comma
@@ -139,6 +138,7 @@
     };
     silent = true;
   };
+  programs.autojump.enable = true;
   programs.fish.enable = true;
   programs.fzf.enable = true;
   programs.fzf.enableFishIntegration = true;

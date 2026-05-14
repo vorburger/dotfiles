@@ -4,9 +4,6 @@ command -q go && set _GOPATH (go env GOPATH)
 fish_add_path $HOME/.nix-profile/bin $DOTFILES/bin $HOME/bin $HOME/.local/bin $_GOPATH/bin $HOME/.cargo/bin $HOME/.krew/bin $HOME/.npm/bin
 # NOT $PWD/node_modules/.bin, see https://github.com/vorburger/Notes/blob/master/Reference/javascript.md#pnpm
 
-# autojump.fish from https://github.com/wting/autojump/blob/master/bin/autojump.fish is installed by the autojump-fish package
-test -f /usr/share/autojump/autojump.fish && source /usr/share/autojump/autojump.fish
-
 command -q starship && starship init fish | source
 
 # https://github.com/sharkdp/bat#man

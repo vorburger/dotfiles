@@ -20,7 +20,7 @@ sudo dnf install -y \
     golang git htop \
     java-latest-openjdk-devel java-latest-openjdk-src java-latest-openjdk-javadoc java-latest-openjdk-javadoc-zip java-latest-openjdk-jmods \
     trash-cli ShellCheck tmux wipe wl-clipboard \
-    fish autojump-fish autojump fd-find bat \
+    fd-find bat \
     automake autoconf texinfo gettext-devel ncurses-devel \
     pwgen diceware \
     graphviz \
