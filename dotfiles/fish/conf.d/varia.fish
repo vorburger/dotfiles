@@ -23,6 +23,12 @@ test -f /usr/bin/batcat && set -gx MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 
 # Use word instead of backward-kill-path-component to match .inputrc
 bind \b backward-kill-word
+# Kitty Ctrl-Backspace (with modern keyboard protocol)
+if test (string split . $FISH_VERSION)[1] -ge 4
+    bind ctrl-backspace backward-kill-word
+else
+    bind "\e[127;5u" backward-kill-word
+end
 
 # Ctrl-P for FZF, same as default Ctrl-T - for consistency with VSC
 bind \cp fzf-file-widget
