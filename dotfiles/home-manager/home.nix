@@ -67,7 +67,10 @@
     ];
 
     activation.activate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      SSH_CMD=${pkgs.openssh}/bin/ssh GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
+      # On Fedora/generic Linux, Nix's openssh fails because it tries to read Fedora's
+      # /etc/crypto-policies/back-ends/openssh.config which contains RedHat-specific patches.
+      SSH_CMD=${if lib.pathExists "/etc/NIXOS" then "${pkgs.openssh}/bin/ssh" else "ssh"}
+      GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
       $DRY_RUN_CMD "$HOME/git/github.com/vorburger/dotfiles/symlink.sh"
     '';
 
