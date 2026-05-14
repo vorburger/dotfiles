@@ -84,6 +84,7 @@
   "editor.formatOnType": false,
   "editor.indentSize": "tabSize",
   "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.showToolbar": "never",
   "editor.lineNumbers": "off",
   // https://code.visualstudio.com/docs/languages/html#_auto-update-tags
   "editor.linkedEditing": true,
