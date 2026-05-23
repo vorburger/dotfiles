@@ -64,7 +64,7 @@ fi
 
 sudo dnf update -y
 
-sudo dnf remove -y "libreoffice*"
+sudo dnf remove -y "libreoffice*" vim-minimal
 
 # sudo alternatives --config java
 # sudo alternatives --config javac
