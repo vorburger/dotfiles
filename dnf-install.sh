@@ -60,6 +60,9 @@ else
   echo "Not enabling dnf5-automatic.timer, because no systemd"
 fi
 
+# See docs/power.md ...
+sudo systemctl enable --now powertop.service
+
 ./systemd-install.sh
 
 sudo dnf update -y

@@ -92,7 +92,10 @@ These are relatively "coarse grained" profiles - and require a user to remember 
 
 After `sudo powertop --calibrate`, or just running for a while, Power Estimates in Watt will start to show up.
 
-It has a _Tunables_ section which recommendations for PCIe devices. Changes made there do not persist over a reboot, but it's possible to launch `powertop --auto-tune` at every system boot, e.g. with systemd. Powertop is not aware of if the laptop runs on battery or not.
+It has a _Tunables_ section which recommendations for PCIe devices. Powertop is not aware of if the laptop runs on battery or not. Changes made there do not persist over a reboot, but it's possible to launch `powertop --auto-tune` at every system boot, e.g. with systemd:
+
+    sudo systemctl enable --now powertop.service
+    sudo systemctl status powertop.service
 
 TLP fixes Powertop's _Tunables_ recommendations ([ignore the _VM writeback timeout_](https://linrunner.de/tlp/faq/powertop.html)).
 
@@ -121,3 +124,4 @@ https://github.com/konkor/cpufreq looks neat - but it's manual; automation with 
 * https://wiki.archlinux.org/title/Power_management
 * https://fedoramagazine.org/saving-laptop-power-with-powertop/
 * https://www.thinkwiki.org/wiki/How_to_reduce_power_consumption - outdated
+
