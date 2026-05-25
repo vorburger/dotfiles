@@ -4,7 +4,6 @@ bierner.github-markdown-preview@0.3.0
 bierner.markdown-checkbox@0.4.0
 bierner.markdown-emoji@0.3.1
 bierner.markdown-footnotes@0.1.1
-bierner.markdown-mermaid@1.32.1
 bierner.markdown-preview-github-styles@2.2.0
 bierner.markdown-yaml-preamble@0.1.1
 bmalehorn.vscode-fish@1.0.49
