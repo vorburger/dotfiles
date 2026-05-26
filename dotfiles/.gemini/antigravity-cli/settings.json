@@ -1,0 +1,11 @@
+{
+  "colorScheme": "dark",
+  "enableTelemetry": false,
+  "permissions": {
+    "allow": [
+      "command(git status)"
+    ]
+  },
+  "trustedWorkspaces": [
+  ]
+}

@@ -70,3 +70,7 @@ fi
 # Add JBang to environment
 alias j!=jbang
 export PATH="$HOME/.jbang/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/vorburger/.local/bin:$PATH"
