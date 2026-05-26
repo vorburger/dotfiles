@@ -17,9 +17,12 @@ end
 function venv_activate_try -a DIR
   # echo Checking if "$DIR/bin/activate.fish" exists...
   if [ -e "$DIR/bin/activate.fish" ]
-    set_color -i -u -d magenta
-    echo "Activating Python 🥽 Virtual Env for Fish Shell"
-    source "$DIR/bin/activate.fish"
+    set -l abs_dir (realpath "$DIR")
+    if not set -q VIRTUAL_ENV; or [ "$VIRTUAL_ENV" != "$abs_dir" ]
+      set_color -i -u -d magenta
+      echo "Activating Python 🥽 Virtual Env for Fish Shell"
+      source "$DIR/bin/activate.fish"
+    end
   end
 end
 
