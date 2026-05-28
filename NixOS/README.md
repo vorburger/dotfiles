@@ -1,8 +1,9 @@
 # NixOS
 
 Status: This is a WIP and currently broken;
-see also https://github.com/vorburger/LearningLinux/tree/develop/nix/os,
-for a clean restart from scratch (which this will be pieced back together from again later).
+see also https://github.com/vorburger/nixfiles
+and the older https://github.com/vorburger/LearningLinux/tree/develop/nix/os,
+for a clean restart from scratch (which this will be replaced by, when I clean up).
 
 ## Usage
 
