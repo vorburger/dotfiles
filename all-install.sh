@@ -24,7 +24,11 @@ fish "$DIR"/fish-install.fish
 # but installing it here ensures all plugins are pre-installed before the first run.
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  ~/.tmux/plugins/tpm/bin/install_plugins
+  if command -v tmux &> /dev/null; then
+    ~/.tmux/plugins/tpm/bin/install_plugins
+  else
+    echo "Skipping tmux plugin installation because tmux is not installed."
+  fi
 fi
 
 # https://github.com/junegunn/fzf#using-git
