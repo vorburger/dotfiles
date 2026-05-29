@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Brave Browser
-Exec=brave-browser --password-store=gnome
+Exec=sh -c 'exec $(command -v brave-browser || command -v brave) --password-store=gnome'
 Icon=brave-browser
 Categories=Network;WebBrowser;
 Terminal=false
