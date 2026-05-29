@@ -25,9 +25,6 @@ alias a="gemini"
 alias z="~/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola ai"
 alias zc="~/git/github.com/enola-dev/enola/bazel-bin/java/dev/enola/cli/enola ai --http-scheme --agents=https://raw.githubusercontent.com/enola-dev/git-commit-message-agent/refs/heads/main/git-commit-message.agent.yaml --in='Make it so!'"
 
-# Other
-alias pass="EDITOR=/usr/bin/nano /bin/pass "
-
 # https://github.com/vorburger/dotfiles/blob/master/README.md#google-cloud-shell
 alias cloud="gcloud cloud-shell ssh --ssh-flag=-A"
 
