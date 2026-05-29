@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Google Antigravity
+Exec=antigravity
+Icon=antigravity
+Categories=Development;IDE;
+Terminal=false
