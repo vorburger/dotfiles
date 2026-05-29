@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+NIXFILES_DIR="/home/vorburger/git/github.com/vorburger/nixfiles"
+
+# Verify nixfiles directory exists
+if [ ! -d "$NIXFILES_DIR" ]; then
+  echo "Error: nixfiles directory not found at $NIXFILES_DIR" >&2
+  exit 1
+fi
+
+# Check for uncommitted changes
+if [ -n "$(git -C "$NIXFILES_DIR" status --porcelain)" ]; then
+  echo "Error: There are dirty or uncommitted changes in $NIXFILES_DIR" >&2
+  git -C "$NIXFILES_DIR" status
+  exit 1
+fi
+
+# Check if the branch has an upstream configured
+if ! git -C "$NIXFILES_DIR" rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+  echo "Error: No remote upstream branch configured for the current branch in $NIXFILES_DIR" >&2
+  exit 1
+fi
+
+# Check if local is in sync with remote (already pushed)
+LOCAL=$(git -C "$NIXFILES_DIR" rev-parse HEAD)
+REMOTE=$(git -C "$NIXFILES_DIR" rev-parse @{u})
+
+if [ "$LOCAL" != "$REMOTE" ]; then
+  echo "Error: nixfiles local branch is not in sync with remote (not pushed or not pulled)" >&2
+  echo "Local:  $LOCAL"
+  echo "Remote: $REMOTE"
+  exit 1
+fi
+
+# Run the nixos-rebuild switch
+echo "All checks passed. Running nixos-rebuild switch..."
+cd "$NIXFILES_DIR"
+sudo nixos-rebuild switch --flake .
