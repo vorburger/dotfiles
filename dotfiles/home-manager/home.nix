@@ -73,6 +73,15 @@
       SSH_CMD=${if lib.pathExists "/etc/NIXOS" then "${pkgs.openssh}/bin/ssh" else "ssh"}
       GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
       $DRY_RUN_CMD "$HOME/git/github.com/vorburger/dotfiles/symlink.sh"
+
+      # Automatically install tmux plugins via TPM if missing
+      if [ ! -d "$HOME/.tmux/plugins/tmux-resurrect" ]; then
+        if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+          $DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+        fi
+        export PATH="${pkgs.tmux}/bin:${pkgs.git}/bin:${pkgs.gawk}/bin:${pkgs.gnused}/bin:${pkgs.gnugrep}/bin:$PATH"
+        $DRY_RUN_CMD "$HOME/.tmux/plugins/tpm/bin/install_plugins"
+      fi
     '';
 
     activation.gh-triage = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
