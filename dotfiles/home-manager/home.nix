@@ -19,6 +19,7 @@
       comma
       delta
       direnv
+      file
       fish
       frogmouth
       fzf
