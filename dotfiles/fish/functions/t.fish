@@ -14,7 +14,7 @@ function t -d "Test code in current or parent directory (using various strategie
             cd "$start_dir"
             return 0
         else if test -f "flake.nix"
-            nix flake check
+            nix-fast-build --flake .#checks.x86_64-linux
             cd "$start_dir"
             return 0
         else if test -f "pom.xml"
@@ -45,6 +45,6 @@ function t -d "Test code in current or parent directory (using various strategie
         cd ..
     end
     cd "$start_dir"
-    echo "Could not test, no test file found (searched for test.bash, test.sh, test, pom.xml, build.gradle, BUILD, BUILD.bazel)."
+    echo "Could not test, no test file found (searched for test.bash, test.sh, test, flake.nix, pom.xml, build.gradle, BUILD, BUILD.bazel)."
     return 1
 end

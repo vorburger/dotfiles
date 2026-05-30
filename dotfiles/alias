@@ -61,9 +61,10 @@ alias gsp="git stash pop"
 # see fish/conf.d/git.fish (and ../bin/g*) for more Git tools
 
 # Nix!
-alias nfc="nix flake check"
-alias nfcq="nix flake check --no-build"
-alias nt="nix run .#test"
+# NB: Just always use "t" instead of these...
+#   alias nfc="nix-fast-build --flake .#checks.x86_64-linux"
+#   alias nfcq="nix flake check --no-build"
+#   alias nt="nix run .#test"
 alias nr="nix run"
 alias nl="nix log"
 # nrp is in dotfiles/fish/functions/nix.fish
