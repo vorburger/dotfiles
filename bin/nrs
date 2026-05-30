@@ -36,4 +36,4 @@ fi
 # Run the nixos-rebuild switch
 cd "$NIXFILES_DIR"
 # sudo nixos-rebuild switch --flake .
-nh os switch --ask .
+nh os switch --diff always --ask .

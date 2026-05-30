@@ -71,5 +71,5 @@ alias nl="nix log"
 alias hm="home-manager"
 alias hme="home-manager edit"
 # alias hms="home-manager switch"
-alias hms="nh home switch --ask"
+alias hms="nh home switch --diff always --ask"
 # hmu is in bin/
