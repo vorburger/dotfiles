@@ -62,6 +62,7 @@ alias gsp="git stash pop"
 
 # Nix!
 alias nfc="nix flake check"
+alias nfcq="nix flake check --no-build"
 alias nt="nix run .#test"
 alias nr="nix run"
 alias nl="nix log"
