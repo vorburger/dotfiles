@@ -5,6 +5,12 @@ set -euo pipefail
 GIT_CMD="${GIT_CMD:-git}"
 SSH_CMD="${SSH_CMD:-ssh}"
 
+# Check if github.com is reachable (offline or sandboxed builder)
+if ! getent hosts github.com &>/dev/null; then
+  echo "Warning: github.com is unreachable. Skipping all clones." >&2
+  exit 0
+fi
+
 # Ensure git uses the same ssh binary as defined in SSH_CMD.
 export GIT_SSH_COMMAND="$SSH_CMD"
 

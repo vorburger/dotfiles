@@ -72,10 +72,14 @@
       # /etc/crypto-policies/back-ends/openssh.config which contains RedHat-specific patches.
       SSH_CMD=${if lib.pathExists "/etc/NIXOS" then "${pkgs.openssh}/bin/ssh" else "ssh"}
       GIT_CMD=${pkgs.git}/bin/git $DRY_RUN_CMD ${../../git-clone.sh}
-      $DRY_RUN_CMD "$HOME/git/github.com/vorburger/dotfiles/symlink.sh"
+      if [ -f "$HOME/git/github.com/vorburger/dotfiles/symlink.sh" ]; then
+        $DRY_RUN_CMD "$HOME/git/github.com/vorburger/dotfiles/symlink.sh"
+      else
+        echo "Warning: symlink.sh not found, skipping..."
+      fi
 
-      # Automatically install tmux plugins via TPM if missing
-      if [ ! -d "$HOME/.tmux/plugins/tmux-resurrect" ]; then
+      # Automatically install tmux plugins via TPM if missing and online
+      if [ ! -d "$HOME/.tmux/plugins/tmux-resurrect" ] && getent hosts github.com &>/dev/null; then
         if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
           $DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
         fi
