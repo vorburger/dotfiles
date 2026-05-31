@@ -24,7 +24,7 @@
     autocrlf = input
     eol = native
     editor = nano
-    pager = delta
+    pager = "if [ \"$TERM\" = \"dumb\" ]; then cat; else delta; fi"
 
 [interactive]
     diffFilter = delta --color-only
