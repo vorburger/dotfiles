@@ -14,6 +14,6 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Build Dockerfile-nix-devcontainer-codespace
         run: docker build --build-arg GITHUB_TOKEN=${{ github.token }} -f Dockerfile-nix-devcontainer-codespace .
