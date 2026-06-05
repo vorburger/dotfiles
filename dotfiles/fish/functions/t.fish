@@ -14,9 +14,7 @@ function t -d "Test code in current or parent directory (using various strategie
             cd "$start_dir"
             return 0
         else if test -f "flake.nix"
-            # TODO After https://github.com/Mic92/nix-fast-build/pull/341 is fixed:
-            #   nix-fast-build --fail-fast --flake .#checks.x86_64-linux
-            nix-fast-build --flake .#checks.x86_64-linux
+            nix-fast-build --fail-fast --flake .#checks.x86_64-linux
             cd "$start_dir"
             return 0
         else if test -f "pom.xml"
