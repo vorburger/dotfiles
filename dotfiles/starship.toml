@@ -73,7 +73,7 @@ disabled = true
 [[battery.display]]
 # Always showing the battery is useful on the console. It doesn't hurt in a DM either.
 discharging_symbol = '󰁽 ' # default 󰂃 is unnecessarily scary
-style = 'blue' # default red is unnecessarily scary
+style = '#476b6b' # default red is unnecessarily scary
 threshold = 78
 
 [docker_context]
