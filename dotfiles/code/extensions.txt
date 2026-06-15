@@ -1,6 +1,6 @@
 alphabotsec.vscode-eclipse-keybindings@0.16.1
 bierner.emojisense@0.10.0
-bierner.github-markdown-preview@0.3.0
+bierner.github-markdown-preview@0.4.0
 bierner.markdown-checkbox@0.4.0
 bierner.markdown-emoji@0.3.1
 bierner.markdown-footnotes@0.1.1
@@ -20,9 +20,9 @@ editorconfig.editorconfig@0.18.2
 esbenp.prettier-vscode@12.4.0
 git-emoji.vscode-git-emoji@0.0.17
 github.codespaces@1.18.13
-github.vscode-github-actions@0.31.5
+github.vscode-github-actions@0.32.0
 htmlhint.vscode-htmlhint@1.16.0
-html-validate.vscode-html-validate@2.14.1
+html-validate.vscode-html-validate@2.14.4
 jbangdev.jbang-vscode@0.12.0
 jbockle.jbockle-format-files@3.4.0
 jgclark.vscode-todo-highlight@2.0.8
@@ -34,8 +34,8 @@ mkhl.direnv@0.17.0
 ms-azuretools.vscode-containers@2.4.5
 ms-azuretools.vscode-docker@2.0.0
 ms-vscode.remote-explorer@0.5.0
-ms-vscode-remote.remote-containers@0.459.0
-ms-vscode-remote.remote-ssh@0.123.0
+ms-vscode-remote.remote-containers@0.459.1
+ms-vscode-remote.remote-ssh@0.124.0
 ms-vscode-remote.remote-ssh-edit@0.87.0
 ms-vscode.remote-server@1.5.3
 ms-vscode-remote.vscode-remote-extensionpack@0.26.0
@@ -45,7 +45,7 @@ nico-castell.linux-desktop-file@0.0.21
 oven.bun-vscode@0.0.32
 piousdeer.adwaita-theme@1.1.0
 redhat.java@1.54.0
-redhat.vscode-xml@0.29.2
+redhat.vscode-xml@0.29.3
 redhat.vscode-yaml@1.23.0
 rvest.vs-code-prettier-eslint@6.0.0
 seaube.clangformat@2.0.2
@@ -55,8 +55,8 @@ streetsidesoftware.code-spell-checker@4.5.6
 timonwong.shellcheck@0.39.5
 vscjava.vscode-gradle@3.17.3
 vscjava.vscode-java-debug@0.59.0
-vscjava.vscode-java-dependency@0.27.4
-vscjava.vscode-java-pack@0.31.0
+vscjava.vscode-java-dependency@0.27.5
+vscjava.vscode-java-pack@0.31.1
 vscjava.vscode-java-test@0.45.0
 vscjava.vscode-maven@0.45.3
 vscode-icons-team.vscode-icons@12.18.0
