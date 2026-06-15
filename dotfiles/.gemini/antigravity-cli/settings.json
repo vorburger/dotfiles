@@ -3,10 +3,13 @@
   "enableTelemetry": false,
   "permissions": {
     "allow": [
-      "command(git status)"
+      "command(git status)",
+      "command(pstree)"
     ]
   },
   "trustedWorkspaces": [
+    "/home/vorburger/git/github.com/enola-dev/enola",
+    "/home/vorburger/git/github.com/enola-dev/enola2",
     "/home/vorburger/git/github.com/enola-dev/enola2ui"
   ]
 }
