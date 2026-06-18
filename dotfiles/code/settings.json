@@ -377,6 +377,7 @@
     "https://github.com/microsoft/vscode/wiki/*": true,
     "https://javalin.io": true,
     "https://schemathesis.readthedocs.io": true,
+    "https://docs.gradle.org": true,
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "python.languageServer": "Default",
