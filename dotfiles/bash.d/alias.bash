@@ -19,16 +19,20 @@ command -v lsd >/dev/null 2>&1 && alias lt="lsd --tree "
 command -v bat >/dev/null 2>&1 && alias c="bat "
 
 # https://stackoverflow.com/a/24665529/421602
-source /usr/share/bash-completion/completions/git
-__git_complete g   _git
-__git_complete gl  _git_log
-__git_complete gll _git_log
-__git_complete glg _git_log
-__git_complete gd  _git_diff
-__git_complete ga  _git_add
-__git_complete gco _git_checkout
-__git_complete gpu _git_push
-__git_complete gpl _git_pull
+if [ -f /usr/share/bash-completion/completions/git ]; then
+  source /usr/share/bash-completion/completions/git
+fi
+if declare -F __git_complete >/dev/null 2>&1; then
+  __git_complete g   _git
+  __git_complete gl  _git_log
+  __git_complete gll _git_log
+  __git_complete glg _git_log
+  __git_complete gd  _git_diff
+  __git_complete ga  _git_add
+  __git_complete gco _git_checkout
+  __git_complete gpu _git_push
+  __git_complete gpl _git_pull
+fi
 
 if hash kubectl 2>/dev/null; then
   source <(kubectl completion bash)
@@ -45,4 +49,6 @@ export PATH="${HOME}/.cargo/bin:$PATH"
 
 # Go built binaries
 # This isn't the `go` binary itself; that's added to the PATH in go-path.sh
-export PATH="$(go env GOPATH)/bin:$PATH"
+if command -v go >/dev/null 2>&1; then
+  export PATH="$(go env GOPATH)/bin:$PATH"
+fi
