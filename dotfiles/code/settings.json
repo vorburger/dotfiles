@@ -366,6 +366,7 @@
     "true": true,
     "gradle compileTestJava": true,
     "gradle build": true,
+    "treefmt": true,
   },
   "gradle.showStoppedDaemons": true,
   "docker.extension.enableComposeLanguageServer": false,
