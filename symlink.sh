@@ -143,7 +143,6 @@ f .config/sway/config dotfiles/.config/sway/config
 f .config/weston.ini dotfiles/.config/weston.ini
 f .config/lsd/config.yaml dotfiles/lsd.yaml
 f .m2/toolchains.xml dotfiles/m2/toolchains.xml
-f .gemini/settings.json dotfiles/.gemini/settings.json
 fh .gemini/policies/auto-saved.toml dotfiles/.gemini/policies/auto-saved.toml
 f .gemini/GEMINI.md dotfiles/.gemini/GEMINI.md
 f .gemini/antigravity-cli/settings.json dotfiles/.gemini/antigravity-cli/settings.json

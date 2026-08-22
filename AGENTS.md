@@ -6,4 +6,4 @@ This https://agents.md file documents conventions for agentic AI tools like http
 
 - **OS Compatibility**: Always ensure that changes to dotfiles and Home Manager configurations are compatible with both Fedora Workstation and NixOS. Use conditional logic (e.g., `lib.pathExists "/etc/NIXOS"`) when settings are specific to one environment.
 
-- **MCP Servers**: Always ensure that new MCP servers are added to `dotfiles/code/mcp.json`, `dotfiles/.gemini/settings.json`, and `dotfiles/.gemini/antigravity/mcp_config.json`. See the `mcp-sync` skill in `.agents/skills/mcp-sync/SKILL.md` for details.
+- **MCP Servers**: MCP servers are configured in `dotfiles/code/mcp.json` for VS Code / Copilot, and declaratively managed in `nixfiles/modules/tools/antigravity.nix` for Antigravity. See the `mcp-sync` skill in `.agents/skills/mcp-sync/SKILL.md` for details.
