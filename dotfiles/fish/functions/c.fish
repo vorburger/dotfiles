@@ -15,7 +15,8 @@ function c --description "Use glow for Markdown files, fallback to bat"
 
     if test "$all_md" = true; and command -sq glow
         for arg in $argv
-            glow -p "$arg"
+            # glow --pager instead of --tui sometimes doesn't show colors
+            glow --tui "$arg"
         end
     else if command -sq batcat
         batcat $argv

@@ -49,8 +49,6 @@ Use AI to fix all this... Gemini, or Enola!
   - Do the VSC Beancount Extensions for LLnP work remotely now? Probably not, just like they don't from the laptop. Open issues.
   - This might fix the git-server login? Not sure, could be unrelated.
 
-- Make `alias c` use `glow` or `mdcat` instead of `bat` IFF MD
-
 - https://docs.deno.com/runtime/manual/getting_started/setup_your_environment#fish-example
 
 - Container, take 2?
