@@ -95,3 +95,6 @@
 # From /etc/gitconfig of Google Cloud Shell <gcr.io/cloudshell-images/cloudshell:latest>
 [credential "https://source.developers.google.com"]
         helper = gcloud.sh
+
+[include]
+    path = ~/.gitconfig.local
