@@ -20,7 +20,6 @@
       ...
     }:
     let
-      # TODO Support Mac...
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
@@ -50,13 +49,17 @@
         vorburger = mkHomeConfig { username = "vorburger"; };
         code = mkHomeConfig { username = "code"; };
 
-        # Dedicated Pure Config for a specific machine.
-        # Home Manager automatically looks for "username@hostname" first.
-        # This matches the user "vorburger" on a machine named "headless-workstation"
         "vorburger@headless-workstation" = mkHomeConfig {
           username = "vorburger";
-          # Set this to the actual non-standard $HOME path:
           homeDirectory = "/var/home/vorburger";
+        };
+        "vorburger@vorburger.c.googlers.com" = mkHomeConfig {
+          username = "vorburger";
+          homeDirectory = "/usr/local/google/home/vorburger";
+        };
+        "vorburger@vorburger" = mkHomeConfig {
+          username = "vorburger";
+          homeDirectory = "/usr/local/google/home/vorburger";
         };
       };
     };

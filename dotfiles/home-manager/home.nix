@@ -32,6 +32,7 @@
       jq
       lazygit
       lsd
+      nh
       psmisc
       uv
       sops
