@@ -27,16 +27,12 @@
       mkHomeConfig =
         {
           username,
-          homeDirectory ? "",
+          homeDirectory ? "/home/${username}",
         }:
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          # Pass variables to home.nix.
-          # envHOME gets the explicitly passed homeDirectory, or falls back to reading
-          # the HOME environment variable if --impure is passed, or is empty ("").
           extraSpecialArgs = {
-            inherit username;
-            envHOME = if homeDirectory != "" then homeDirectory else builtins.getEnv "HOME";
+            inherit username homeDirectory;
           };
           modules = [
             nix-index-database.homeModules.nix-index

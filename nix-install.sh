@@ -7,4 +7,4 @@ set -euxo pipefail
 
 DIR="$(realpath "$(dirname "$0")")"
 
-nix --extra-experimental-features "nix-command flakes" run nixpkgs#home-manager -- switch --flake "$DIR/dotfiles/home-manager" --impure
+nix --extra-experimental-features "nix-command flakes" run nixpkgs#home-manager -- switch --flake "$DIR/dotfiles/home-manager"
