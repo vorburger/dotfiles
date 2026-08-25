@@ -66,12 +66,6 @@ GO_BIN_PATH=$(go env GOPATH)/bin
 # Like in apt-install.sh, most of these tools don't need to be pre-installed into GitHub Codespaces, or only via prebuilt Dev Container:
 if [[ -z "${CODESPACES:-}" ]]; then
 
-  # NB alias b="bazelisk " in dotfiles/alias
-  # NB alias bazel (with completion) in dotfiles/fish/completions/bazel.fish for Fish Shell (only; N/A in Bash, and from Scripts)
-  # NB We symlink "bazel" here, because this is better than the "delegating shell script" used originally (because of https://github.com/salesforce/bazel-eclipse/issues/477 like non-"bash -c" from IDE and other such tools)
-  # We use "$GO_BIN_PATH"/bazel instead of e.g. "$HOME"/bin/bazel because that should be in the PATH more often than our more "custom" ~/bin
-  [ -s "$GO_BIN_PATH"/bazelisk ] || (go install github.com/bazelbuild/bazelisk@latest && ln -s "$GO_BIN_PATH"/bazelisk "$GO_BIN_PATH"/bazel)
-
   # https://github.com/bazelbuild/buildtools/tree/master/buildifier
   [ -s "$GO_BIN_PATH"/buildifier ] || go install github.com/bazelbuild/buildtools/buildifier@latest
 

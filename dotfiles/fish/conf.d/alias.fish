@@ -27,7 +27,7 @@ command -sq rg &&
     rg -p $argv | less -R -q
   end
 
-complete --command b --wraps bazelisk --wraps bazel
+complete --command b --wraps bazel
 complete --command g --wraps git
 complete --command kubecolor --wraps kubectl
 complete --command k --wraps kubecolor

@@ -13,9 +13,7 @@ alias gti="gradle integrationTest"
 alias k="kubecolor "
 alias jb="jbang "
 alias b="frogmouth"
-alias bz="bazelisk "
-alias bazel="bazelisk "
-# This ^^^ is required just because completions/bazel.fish uses bazel not bazelisk.
+alias bz="bazel "
 
 # AI
 alias a="gemini"

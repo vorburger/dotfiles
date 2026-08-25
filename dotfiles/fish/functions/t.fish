@@ -34,7 +34,7 @@ function t -d "Test code in current or parent directory (using various strategie
             cd "$start_dir"
             return 0
         else if test -f "BUILD" -o -f "BUILD.bazel"
-            bazelisk test --nobuild_tests_only //...
+            bazel test --nobuild_tests_only //...
             cd "$start_dir"
             return 0
         end
