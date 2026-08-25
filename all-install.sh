@@ -94,7 +94,6 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # [ -s "$HOME"/.rustup/settings.toml ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   # https://github.com/cargo-bins/cargo-binstall (AKA cargo binstall)
   # [ -s "$HOME/.cargo/bin/cargo-binstall" ] || curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-  # ? source "$HOME/.bashrc"
 
   # https://github.com/evanlucas/fish-kubectl-completions
   # TODO remove when https://github.com/kubernetes/kubectl/issues/576 is available
@@ -119,7 +118,7 @@ if [[ -z "${CODESPACES:-}" ]]; then
   # https://www.jbang.dev/documentation/guide/latest/installation.html
   curl -Ls https://sh.jbang.dev | bash -s - app setup
   # NB: ~/.jbang/bin must be added to PATH for this to work. That script does that for Bash;
-  # for Fish, we're doing this in dotfiles/fish/config.fish;
+  # for Fish, we're doing this in dotfiles/fish/conf.d/jbang.fish;
   # see https://github.com/jbangdev/jbang/issues/2189.
 fi
 

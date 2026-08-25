@@ -22,9 +22,6 @@ x() {
   find $DIR/$2* -exec ln -sfnr {} ~/$1 \;
 }
 
-l .alias dotfiles/alias
-l .bashrc dotfiles/bashrc
-x .bash.d/ dotfiles/bash.d/
 l .inputrc dotfiles/.inputrc
 l .tmux.conf dotfiles/.tmux.conf
 ## x .config/fish/functions/ dotfiles/fish/functions/

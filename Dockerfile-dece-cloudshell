@@ -13,7 +13,6 @@ COPY dotfiles/ /home/vorburger/dev/dotfiles/dotfiles/
 
 # as per ./README.md
 RUN /home/vorburger/dev/dotfiles/git-intstall.sh \
- && rm /home/vorburger/.bashrc \
  && /home/vorburger/dev/dotfiles/symlink.sh
 
 # We have to reset the user to root so that parent image will work as intended

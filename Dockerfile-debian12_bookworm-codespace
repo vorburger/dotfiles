@@ -3,7 +3,7 @@ FROM debian:bookworm
 COPY . /var/local/vorburger-dotfiles/
 
 # Simulate a Codespace environment so that:
-# - symlink.sh backs up existing files (e.g. /root/.bashrc) instead of failing
+# - symlink.sh backs up existing files (e.g. /root/.gitconfig) instead of failing
 # - apt-install.sh and all-install.sh take the Codespace-only path (minimal install)
 ENV CODESPACES=true
 

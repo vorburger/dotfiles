@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# See ../.bash.d/alias for more Git tools
+# See ../dotfiles/fish/conf.d/git.fish for more Git tools
 set -euxo pipefail
 
 CURRENT_BRANCH=$(git branch --show-current)

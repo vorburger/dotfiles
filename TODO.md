@@ -76,8 +76,6 @@ Use AI to fix all this... Gemini, or Enola!
 
 - https://github.com/gazorby/fish-abbreviation-tips/issues/27
 
-- Fresh Install `.bashrc` contains only `[ -f ~/.fzf.bash ] && source ~/.fzf.bash` ?! Perhaps some set-up order got inverted...
-
 - clean up bin/, mv ARCHIVE or rm; many scripts are un-used
 
 - https://wiki.archlinux.org/title/Color_output_in_console
@@ -105,8 +103,6 @@ Use AI to fix all this... Gemini, or Enola!
   `ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts`
 
 - README clean-up
-
-- Remove all bash support to clean-up, and do only Fish
 
 - container: https://docs.podman.io/en/latest/markdown/podman-auto-update.1.html ?
   This is better than --pull=newer, because it's more explicit. Also, newer isn't actually _newer_ but _different,_ which is a PITA during local development.

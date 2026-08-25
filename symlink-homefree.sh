@@ -30,10 +30,6 @@ d() {
 cp -R /etc/fish /etc/fish.original
 mv /etc/inputrc /etc/inputrc.original
 mv /etc/gitconfig /etc/gitconfig.original
-
-# TODO https://cloud.google.com/shell/docs/limitations#bashrc_content
-# f .bashrc dotfiles/bashrc
-# d .bash.d/ dotfiles/bash.d/
 f /etc/inputrc dotfiles/.inputrc
 f /usr/local/etc/nanorc  dotfiles/.nanorc
 f /etc/gitconfig dotfiles/gitconfig

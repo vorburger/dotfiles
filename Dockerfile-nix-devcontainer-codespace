@@ -3,7 +3,7 @@ FROM ghcr.io/xtruder/nix-devcontainer:v1@sha256:34b3b05a767b8c16db9be933cb8a7d87
 COPY --chown=code:code . /var/local/vorburger-dotfiles/
 
 # Simulate a Codespace environment so that:
-# - symlink.sh backs up existing files (e.g. /root/.bashrc) instead of failing
+# - symlink.sh backs up existing files (e.g. /root/.gitconfig) instead of failing
 ENV CODESPACES=true
 
 # Accept a GitHub token to authenticate Nix flake fetches and avoid rate limits.

@@ -26,7 +26,6 @@ COPY --chown=vorburger:vorburger dotfiles/  /home/vorburger/dev/dotfiles/dotfile
 COPY --chown=vorburger:vorburger bin/       /home/vorburger/dev/dotfiles/bin/
 
 RUN /home/vorburger/dev/dotfiles/all-install.sh \
- && rm /home/vorburger/.bashrc \
  && /home/vorburger/dev/dotfiles/symlink.sh
 
 COPY .git-described /etc/git-release

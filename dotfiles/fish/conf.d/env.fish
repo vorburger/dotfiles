@@ -2,9 +2,6 @@
 # documents the different between -Ux (universal + ENV) and -gx (global + ENV);
 # use U for stuff you will "never" change and g for things you may temporarily change.
 
-# see also ../../bashrc
-# see also ../../alias
-
 # NB: PATH is set in ../config.fish
 
 set DOTFILES (dirname (realpath (status --current-filename)))/../../..

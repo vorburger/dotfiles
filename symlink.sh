@@ -112,11 +112,7 @@ d() {
 mkdir -p ~/.gnupg
 chmod 700 ~/.gnupg
 
-# TODO Simplify this by moving everything to the expected place in git already...
 f .tool-versions dotfiles/.tool-versions
-# TODO Fully remove Bash customizations, as interactive shell is Fish:
-#   f .bashrc dotfiles/bashrc
-d .bash.d/ dotfiles/bash.d/
 f .bazelrc dotfiles/.bazelrc
 f .inputrc dotfiles/.inputrc
 f .nanorc  dotfiles/.nanorc

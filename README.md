@@ -22,7 +22,7 @@ For using the [Nix](https://nixos.org) package manager with these dotfiles on no
 
 Without cloning, you can also just directly: `nix --extra-experimental-features "nix-command flakes" run nixpkgs#home-manager -- switch --flake github:vorburger/dotfiles?dir=dotfiles/home-manager`.
 
-Now add packages etc. to [`home.nix`](dotfiles/home-manager/home.nix) with `hme`, then run [`hms`](dotfiles/alias) to activate them. Use [`hmu`](bin/hmu) to upgrade Nix packages.
+Now add packages etc. to [`home.nix`](dotfiles/home-manager/home.nix) with `hme`, then run [`hms`](dotfiles/fish/conf.d/alias.fish) to activate them. Use [`hmu`](bin/hmu) to upgrade Nix packages.
 
 See [`home-manager`](dotfiles/home-manager) for more background.
 
@@ -31,7 +31,6 @@ See [`home-manager`](dotfiles/home-manager) for more background.
     ./git-clone.sh
     ./pacman-install.sh
     ./pacman-install-gui.sh
-    mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
     ./authorized_keys.sh
 
@@ -127,7 +126,6 @@ Unless you already have GitHub auth working, we may have a "chicken and egg" pro
 
     sudo cp container/sshd/01-local.conf /etc/ssh/sshd_config.d/
 
-    mv ~/.bashrc ~/.bashrc.original
     ./dnf-install-gui.sh
     ./authorized_keys.sh
 
@@ -152,7 +150,6 @@ Remember to Export device configuration to [`keyboard/uhk/`](keyboard/uhk/UserCo
 
     ./git-clone.sh
     ./debian-install.sh # or ./ubuntu-install.sh
-    mv ~/.bashrc ~/.bashrc.original
     ./symlink.sh
     ./setup.sh
     ./authorized_keys.sh
@@ -323,7 +320,7 @@ but it has [less "SDKs"](https://sdkman.io/sdks) than `asdf` [has plugins](https
 
 Browser-based [Secure Shell App](https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en), based on https://hterm.org.
 
-Connection Dialog SSH Arguments e.g. `-At -- /usr/bin/fish` or `-At -- /bin/bash -c "~/bin/tmux3 new -A -s Cloud"`.
+Connection Dialog SSH Arguments e.g. `-At -- /usr/bin/fish` or `-At -- /usr/bin/fish -c "~/bin/tmux3 new -A -s Cloud"`.
 
 It's important to use absolute paths to the shell, because `ssh` won't read `PATH`.
 
@@ -368,23 +365,14 @@ Now `sudo dnf install seahorse` (GNOME's Passwords and Keys) and when prompted, 
     $ ssh git@github.com
     # does not ask for passphrase anymore!
 
-This could be automated e.g. by having an `dotfiles/bash.d/ssh-agent` which contains something like this:
-
-    if [[ -z "$SSH_AUTH_SOCK" ]]; then
-      eval $(ssh-agent)
-      ssh-add $HOME/.ssh/id_ed25519
-    else
-      echo SSH_AUTH_SOCK=$SSH_AUTH_SOCK
-    fi
-
-But with how we'll set it up using a YubiKey and `gpgconf` in the next section we do not need this.
+With how we'll set it up using a YubiKey and `gpgconf` (and Fish's [`SSH_AUTH_SOCK.fish`](dotfiles/fish/conf.d/SSH_AUTH_SOCK.fish)) in the next section we do not need to manually run `eval (ssh-agent)`.
 
 ### `ssh` (incl. `git`) Agent incl. Forwarding with YubiKey
 
 As e.g. per https://github.com/drduh/YubiKey-Guide#replace-agents, we need to appropriately set
 the `SSH_AUTH_SOCK` environment variable.  You could be tempted to do something like the following:
 
-    echo "export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)" > ~/.bash.d/SSH_AUTH_SOCK
+    echo "set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)" > ~/.config/fish/conf.d/SSH_AUTH_SOCK.fish
 
 Doing this on a sever is not required, but doing this on a workstation prevents remote SSH login to the workstation.
 Instead, the [`bin/tmux*`](bin/) scripts very nicely automate and correctly integrate this with TMUX:
@@ -394,7 +382,7 @@ Instead, the [`bin/tmux*`](bin/) scripts very nicely automate and correctly inte
     [you@laptop ~]$ ssh -At desktop -- tmux-ssh new -A -X -s MAKEx
 
 You probably want to put the desktop command into a launch command for your Terminal,
-and `echo` the laptop command into an `~/.bash.d/alias-h`.
+and alias the laptop command in `~/.config/fish/conf.d/alias.fish`.
 
 Remember to always use `ssh -A` to enable Agent Forwarding, as above.
 We could alternatively use `ForwardAgent yes` in our `~/.ssh/config`, but as a security best practice,
