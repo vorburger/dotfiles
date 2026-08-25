@@ -4,12 +4,15 @@
   "permissions": {
     "allow": [
       "command(git status)",
-      "command(pstree)"
+      "command(pstree)",
+      "command(nixos-version)",
+      "command(lsusb)"
     ]
   },
   "trustedWorkspaces": [
     "/home/vorburger/git/github.com/enola-dev/enola",
     "/home/vorburger/git/github.com/enola-dev/enola2",
-    "/home/vorburger/git/github.com/enola-dev/enola2ui"
+    "/home/vorburger/git/github.com/enola-dev/enola2ui",
+    "/home/vorburger/ai"
   ]
 }
