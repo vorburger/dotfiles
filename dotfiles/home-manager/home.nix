@@ -28,6 +28,7 @@
       gws
       htop
       jq
+      jujutsu
       lazygit
       lsd
       nh
