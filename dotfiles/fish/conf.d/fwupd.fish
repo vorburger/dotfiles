@@ -8,8 +8,10 @@ if status is-interactive
   if not test -f $daily_flag_file; or not test (date -r $daily_flag_file +%Y-%m-%d) = $today
     if type -q fwupdmgr
       # fwupdmgr get-updates exits with 0 if updates are available, 2 if not.
+      # Do NOT use --json here: with --json, fwupdmgr exits with 0 even when
+      # no updates are available (returning an empty JSON object {"Devices": []}).
       # Redirect both stdout and stderr to /dev/null.
-      fwupdmgr get-updates --no-authenticate --json >/dev/null 2>&1
+      fwupdmgr get-updates --no-authenticate >/dev/null 2>&1
       if test $status -eq 0
         echo
         set_color yellow
