@@ -14,9 +14,14 @@ function c --description "Use glow for Markdown files, fallback to bat"
     end
 
     if test "$all_md" = true; and command -sq glow
+        # Dynamically wrap to terminal width, capped at 100 for readability
+        set -l cols 80
+        if test -n "$COLUMNS"; and test "$COLUMNS" -gt 0
+            set cols $COLUMNS
+        end
+        set -l width (math "min($cols, 100)")
         for arg in $argv
-            # glow --pager instead of --tui sometimes doesn't show colors
-            glow --tui "$arg"
+            CLICOLOR_FORCE=1 glow --pager --width $width "$arg"
         end
     else if command -sq batcat
         batcat $argv
