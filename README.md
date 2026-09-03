@@ -292,27 +292,6 @@ cannot be SSH into, just like when "gcr.io/cloudshell-image/custom-image-validat
 e.g. due to a newer TMUX having been installed, or e.g. an infinite loop by
 `/etc/inputrc` doing an `$include /etc/inputrc` by `symlink-homefree.sh`.
 
-## Use
-
-### Versions
-
-We use <https://asdf-vm.com> (with `.tool-versions`) to handle different Java versions and such; e.g. to test something with an ancient Java version:
-
-    asdf plugin-add java
-    asdf install java zulu-6.22.0.3
-    asdf shell java zulu-6.22.0.3
-    java -version
-    asdf uninstall java zulu-6.22.0.3
-    asdf plugin-remove java
-
-To switch a project (directory) to a fixed version, and create the `.tool-versions` (which ASDF's Shell integration uses), do:
-
-    asdf local java zulu-6.22.0.3
-
-<https://sdkman.io> with `.sdkmanrc` (and _[sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish))_ is similar,
-but it has [less "SDKs"](https://sdkman.io/sdks) than `asdf` [has plugins](https://github.com/asdf-vm/asdf-plugins?tab=readme-ov-file#plugin-list), which are also visible with `asdf plugin-list-all`.
-
-<https://www.jenv.be> with `.java-version` is another (older) one like these, but it manages JDK and `JAVA_HOME`, only.
 
 ## Security
 

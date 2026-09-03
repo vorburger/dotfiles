@@ -105,15 +105,6 @@ if [[ -z "${CODESPACES:-}" ]]; then
 
   # ToDo: https://github.com/edc/bass ?
 
-  # https://asdf-vm.com/guide/getting-started.html
-  # dotfiles/fish/conf.d/asdf.fish has the Fish shell related initialization
-  [ -d "$HOME"/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
-  [ -s "$HOME"/.config/fish/completions/asdf.fish ] || ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-
-  ~/.asdf/bin/asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
-
-  # TODO Manage *all* Java installations with ASDF instead of DNF?!
-  # ~/.asdf/bin/asdf plugin-add java https://github.com/halcyon/asdf-java.git
 
   # https://www.jbang.dev/documentation/guide/latest/installation.html
   curl -Ls https://sh.jbang.dev | bash -s - app setup

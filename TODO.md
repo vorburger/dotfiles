@@ -61,13 +61,6 @@ Use AI to fix all this... Gemini, or Enola!
   - https://github.com/jenv/jenv/pull/290/files
   - https://github.com/jenv/jenv/issues/301
 
-- How to use System's `java` with ASDF _unless_ there is a `.tool-versions`?
-  - Is it really best to dnf remove openjdk and only use ASDF?! Hm...
-  - https://github.com/asdf-vm/asdf/issues/1622
-  - https://stackoverflow.com/q/74669564/421602 is dumb
-  - https://github.com/asdf-community/asdf-link needs another plugin (name), only good for full alternative, not combination of
-
-- Moar [cool `asdf` plugins](https://github.com/asdf-vm/asdf-plugins?tab=readme-ov-file#plugin-list)
 
 - Make the (new) `f` alias (based on ripgrep) show matches in FZF; and open an editor on Enter (via `e`, i.e. `code` or `nano`)
   - https://github.com/junegunn/fzf/blob/master/ADVANCED.md#using-fzf-as-interactive-ripgrep-launcher

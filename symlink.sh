@@ -112,7 +112,6 @@ d() {
 mkdir -p ~/.gnupg
 chmod 700 ~/.gnupg
 
-f .tool-versions dotfiles/.tool-versions
 f .bazelrc dotfiles/.bazelrc
 f .inputrc dotfiles/.inputrc
 f .nanorc  dotfiles/.nanorc
