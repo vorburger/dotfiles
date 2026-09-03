@@ -1,5 +1,0 @@
-# Nix
-result/
-
-# Start QEMU VM unfortunately writes outside of result/
-*.qcow2

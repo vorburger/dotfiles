@@ -4,8 +4,6 @@ Remember to use _Ctrl-P_ (for fzf) and `f` (for rg=ripgrep; and _Ctrl-H_ in VSC)
 
 ## Nix
 
-_**Consolidate [`NixOS/*`](NixOS/) with [`nixfiles`](https://github.com/vorburger/nixfiles)...**_
-
 Use AI to fix all this... Gemini, or Enola!
 
 1. `$SSH_AUTH_SOCK`
