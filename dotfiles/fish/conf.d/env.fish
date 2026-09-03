@@ -2,7 +2,7 @@
 # documents the different between -Ux (universal + ENV) and -gx (global + ENV);
 # use U for stuff you will "never" change and g for things you may temporarily change.
 
-# NB: PATH is set in ../config.fish
+# NB: PATH is set in 00-PATH.fish
 
 set DOTFILES (dirname (realpath (status --current-filename)))/../../..
 
@@ -37,4 +37,15 @@ set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
 if test ! -n "$ANDROID_HOME"
     and test ! -n "$CODESPACES"
         set -gx ANDROID_HOME /home/vorburger/Android
+end
+
+# https://github.com/sharkdp/bat#man
+# NOT https://github.com/eth-p/bat-extras/blob/master/doc/batman.md
+# For alternatives, see https://wiki.archlinux.org/title/Color_output_in_console#man
+if command -q bat
+    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    set -gx MANROFFOPT -c
+else if command -q batcat
+    set -gx MANPAGER "sh -c 'col -bx | batcat -l man -p'"
+    set -gx MANROFFOPT -c
 end
