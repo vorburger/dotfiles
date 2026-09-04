@@ -34,7 +34,7 @@
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     dark = true
-	pager = less -R -q
+    pager = less -R -q
     # https://github.com/dandavison/delta/blob/master/themes.gitconfig
     # features = chameleon
     # plus-style = white bold green
@@ -87,10 +87,12 @@
 
 # `tig` is a useful git log TUI alternative
 [pull]
-	ff = only
+    ff = only
 
 [init]
     defaultBranch = main
+    # https://github.com/enola-dev/wiki/blob/604899d26af2f5afbbd79f6efc6ec6f20968eeeb/docs/computer/programming/git/reftable.md
+    defaultRefFormat = files
 
 # From /etc/gitconfig of Google Cloud Shell <gcr.io/cloudshell-images/cloudshell:latest>
 [credential "https://source.developers.google.com"]
