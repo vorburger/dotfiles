@@ -33,10 +33,17 @@ set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
 # Set ANDROID_HOME, see
 # https://developer.android.com/tools/variables#android_home;
 # but only if it's not already set, and if we're not in a Codespace,
-# where a Dev Container Feature will set it to something else.
+# where a Dev Container Feature will set it to something else,
+# and only if its path actually exists.
 if test ! -n "$ANDROID_HOME"
     and test ! -n "$CODESPACES"
+    and test -d /home/vorburger/Android
         set -gx ANDROID_HOME /home/vorburger/Android
+end
+
+if test -n "$ANDROID_HOME"
+    and not test -d "$ANDROID_HOME"
+        set -e ANDROID_HOME
 end
 
 # https://github.com/sharkdp/bat#man
