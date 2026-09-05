@@ -22,8 +22,10 @@ alias jb="jbang "
 alias 'j!'="jbang "
 alias b="frogmouth"
 alias bz="bazelisk "
-alias bazel="bazelisk "
-# This ^^^ is required just because completions/bazel.fish uses bazel not bazelisk.
+
+# This ^^^ is required just because completions/bazel.fish uses bazel not bazelisk:
+#   alias bazel="bazelisk "
+# BUT this is confusing like hell, and breaks Nix-based projects with a devshell that has Bazel but not Bazelisk!
 
 # AI
 alias a="gemini"
