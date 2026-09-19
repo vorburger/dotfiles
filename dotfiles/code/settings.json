@@ -108,6 +108,7 @@
     "**/.factorypath": true,
     "**/.project": true,
     "**/.settings": true,
+    "**/bin": true,
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -393,4 +394,6 @@
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml",
   ],
+  "xml.server.vmargs": "-Xmx128M",
+  "java.format.settings.google.mode": "jar-file",
 }
