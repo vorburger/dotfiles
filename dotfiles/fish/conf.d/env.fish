@@ -27,8 +27,14 @@ end
 # This makes FZF use ripgrep, which filters .gitignore, etc.
 set -gx RIPGREP_CONFIG_PATH $DOTFILES/dotfiles/ripgreprc.properties
 set -gx FZF_DEFAULT_COMMAND "rg --files"
-# This makes Ctrl-T FZF's Fish integration use the above
+# This makes Ctrl-T (and Ctrl-P, via bind.fish) FZF's Fish integration use the above
 set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND \$dir"
+if command -q bat
+    set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+else if command -q batcat
+    set -gx FZF_CTRL_T_OPTS "--preview 'batcat --style=numbers --color=always --line-range :500 {}'"
+end
+set -gx FZF_CTRL_R_OPTS '--preview="string collect -- \\#\\ {1} (string split0 -- <{sf3..}) | fish_indent --ansi" --preview-window="bottom:4:wrap"'
 
 # Set ANDROID_HOME, see
 # https://developer.android.com/tools/variables#android_home;
