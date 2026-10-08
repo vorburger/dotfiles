@@ -23,10 +23,17 @@ fish_style_pwd_dir_length = 1
 'dotfiles' = 'dotfiles'
 
 [java]
+disabled = true
 # drop Java version from prompt; format default = "via [${symbol}${version}]($style) "
 format = "via [${symbol}]($style)"
 style = "bold blue"
 # symbol = " " # cute, but too faint
+
+[gradle]
+disabled = true
+
+[kotlin]
+disabled = true
 
 [username]
 format = "[$user]($style) on "  # use 'on' instead of default 'in'
@@ -91,6 +98,7 @@ detect_variables=["RBENV_VERSION"]
 version_format = ''
 
 [nix_shell]
+disabled = true
 # https://github.com/starship/starship/issues/6188
 impure_msg = ''
 # https://github.com/starship/starship/issues/7370
