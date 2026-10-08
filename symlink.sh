@@ -88,6 +88,16 @@ d() {
   local target_dir="$1"
   local source_dir="$2"
   mkdir -p ~/"$target_dir"
+  while IFS= read -r -d '' dst; do
+    if [[ "$(readlink "$dst")" == /nix/store/* ]]; then
+      # Managed by Nix, skip
+      continue
+    fi
+    if [[ ! -e "$dst" ]]; then
+      echo "$dst is a BROKEN symlink, removing it..." >&2
+      rm "$dst"
+    fi
+  done < <(find "$HOME/$target_dir" -maxdepth 1 -type l -print0)
   # Replace find with a loop to get the desired output format
   while IFS= read -r -d '' src; do
     local base="${src##*/}"

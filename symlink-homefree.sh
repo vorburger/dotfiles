@@ -24,6 +24,7 @@ f() {
 
 d() {
   mkdir -p $1
+  find $1 -maxdepth 1 -xtype l -delete
   find $DIR/$2 -maxdepth 1 -type f,l -exec ln -sfnr {} $1 \;
 }
 
