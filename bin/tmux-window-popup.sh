@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # Script to show a tmux window list in a popup and switch to the selected one.
 
+# tmux display-popup runs commands via non-interactive /bin/sh -> bash, which
+# does not source interactive shell PATHs (Fish's 00-PATH.fish or ~/.fzf.bash).
+# Ensure user-local fzf / Nix binaries are in PATH so fzf doesn't fail and
+# immediately close the `display-popup -E` window.
+export PATH="$HOME/.nix-profile/bin:$HOME/.fzf/bin:$HOME/.local/bin:$PATH"
+
 # The format includes the index, name, current path, command, and title.
 # We use #{window_index} because tmux format strings expect single #.
 # We use tab characters (\t) as delimiters so we can align columns nicely.
