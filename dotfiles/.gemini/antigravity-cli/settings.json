@@ -1,12 +1,15 @@
 {
+  "allowNonWorkspaceAccess": false,
   "colorScheme": "dark",
-  "enableTelemetry": false,
+  "model": "Gemini 3.8 Flash (Medium)",
   "permissions": {
     "allow": [
       "command(git status)",
       "command(pstree)",
       "command(nixos-version)",
-      "command(lsusb)"
+      "command(lsusb)",
+      "command(nix)",
+      "command(strings)"
     ]
   },
   "trustedWorkspaces": [
