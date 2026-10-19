@@ -151,7 +151,6 @@ f .config/lsd/config.yaml dotfiles/lsd.yaml
 f .m2/toolchains.xml dotfiles/m2/toolchains.xml
 fh .gemini/policies/auto-saved.toml dotfiles/.gemini/policies/auto-saved.toml
 f .gemini/GEMINI.md dotfiles/.gemini/GEMINI.md
-f .gemini/antigravity-cli/settings.json dotfiles/.gemini/antigravity-cli/settings.json
 f .config/Code/User/mcp.json dotfiles/code/mcp.json
 f .config/Code/User/settings.json dotfiles/code/settings.json
 f .config/Code/User/keybindings.json dotfiles/code/keybindings.json
